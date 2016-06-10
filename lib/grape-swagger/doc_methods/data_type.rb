@@ -6,7 +6,8 @@ module GrapeSwagger
           raw_data_type = value[:type] if value.is_a?(Hash)
           raw_data_type = value unless value.is_a?(Hash)
           raw_data_type ||= 'string'
-          case raw_data_type.to_s
+          raw_data_type = raw_data_type.to_s.gsub(/\[|\]/, '')
+          case raw_data_type
           when 'Boolean', 'Date', 'Integer', 'String', 'Float', 'JSON', 'Array'
             raw_data_type.to_s.downcase
           when 'Hash'
