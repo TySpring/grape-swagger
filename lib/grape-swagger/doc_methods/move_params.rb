@@ -144,7 +144,7 @@ module GrapeSwagger
         end
 
         def movable?(param)
-          return true if param[:in] == 'body' || param[:in] == 'path'
+          return true if param[:in] == 'body'
           false
         end
 
